@@ -1,0 +1,40 @@
+import seaborn as sns
+sns.set()
+tips = sns.load_dataset('tips')
+tips
+tips.head(20)
+bill = tips['total_bill']
+bill
+bill.max()
+tips.info()
+sns.distplot(bill,kde=False,bins = 50)
+sns.jointplot(data=tips,x='total_bill',y='tip',kind='reg')
+sns.pairplot(tips)
+sns.pairplot(tips,hue='smoker',palette='coolwarm') 
+sns.barplot(data=tips,x='total_bill',y='sex',hue='day')
+tips['total_bill'].mean()
+sns.countplot(data=tips,x='sex')
+sns.boxplot(data=tips,x='day',y='total_bill')
+sns.stripplot(data=tips,x='day',y='total_bill',hue='sex',palette='Set1')
+sns.stripplot(data=tips,x='day',y='total_bill',hue='sex',palette='Set1',jitter=False)
+sns.swarmplot(data=tips,x='day',y='total_bill',hue='sex',palette='Set1')
+tips.corr()
+sns.heatmap(tips.corr(),cmap='coolwarm',annot=True)
+sns.lmplot(data=tips,x='total_bill',y='tip',hue='sex',row='sex',col='time')
+sns.set_style('whitegrid')
+sns.countplot(x='sex',data=tips)
+sns.despine(left=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
