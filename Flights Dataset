@@ -1,0 +1,8 @@
+flights = sns.load_dataset('flights')
+flights
+flights.info()
+f = flights.pivot_table(index='month',columns='year')
+sns.heatmap(f,linewidths=1) 
+flights.max()
+sns.clustermap(f)
+
